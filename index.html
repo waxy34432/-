@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТЕСТОВЫЙ САЙТ ГИТ ХАБ </title>
+    <title>waxy09</title>
+    <!-- Подключаем шрифтовые иконки Font Awesome для логотипов соцсетей -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         * {
             margin: 0;
@@ -13,117 +15,171 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            background: linear-gradient(135deg, #090d16 0%, #111827 100%);
             color: #f8fafc;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 30px;
             border-radius: 24px;
-            max-width: 500px;
+            max-width: 450px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #818cf8;
-            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
         .avatar {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, #6366f1, #a855f7);
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(45deg, #1e293b, #334155);
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+            font-size: 36px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #fff, #cbd5e1);
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #fff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        p {
-            color: #94a3b8;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
         }
 
+        /* Общие стили для всех кнопок */
         .btn {
-            display: block;
-            padding: 14px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 14px;
             color: #fff;
             text-decoration: none;
             font-weight: 600;
+            font-size: 16px;
             letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
             cursor: pointer;
         }
 
-        .btn:hover {
-            background: #6366f1;
-            border-color: #818cf8;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
-            transform: scale(1.02);
+        .btn i {
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
         }
 
-        .btn-alt {
-            background: transparent;
-            border: 1px solid rgba(168, 85, 247, 0.4);
+        /* Кнопка 1: ТГ Канал (Светло-синий Telegram) */
+        .btn-tg-channel {
+            background: rgba(34, 158, 217, 0.1);
+            border-color: rgba(34, 158, 217, 0.3);
+            color: #229ed9;
+        }
+        .btn-tg-channel:hover {
+            background: #229ed9;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(34, 158, 217, 0.5);
+            transform: translateY(-2px);
         }
 
-        .btn-alt:hover {
-            background: #a855f7;
-            border-color: #c084fc;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        /* Кнопка 2: Личный ТГ (Темно-синий Telegram) */
+        .btn-tg-private {
+            background: rgba(0, 136, 204, 0.1);
+            border-color: rgba(0, 136, 204, 0.3);
+            color: #0088cc;
+        }
+        .btn-tg-private:hover {
+            background: #0088cc;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 136, 204, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Кнопка 3: TikTok (Черный с неоновым эффектом) */
+        .btn-tiktok {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+        .btn-tiktok:hover {
+            background: #010101;
+            border-color: #fe2c55;
+            box-shadow: -3px -3px 10px rgba(37, 244, 238, 0.3), 3px 3px 10px rgba(254, 44, 85, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Кнопка 4: Discord (Фирменный Blurple) */
+        .btn-discord {
+            background: rgba(88, 101, 242, 0.1);
+            border-color: rgba(88, 101, 242, 0.3);
+            color: #5865f2;
+        }
+        .btn-discord:hover {
+            background: #5865f2;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="avatar">🚀</div>
-        <h1>тест!</h1>
-        <p>тест</p>
+        <div class="avatar">✨</div>
+        <h1>waxy09</h1>
+        <div class="subtitle">Мои контакты</div>
         
         <div class="links-container">
-            <a href="https://t.me/waxy00" target="_blank" class="btn">Мой Telegram</a>
-            <a href="#" class="btn btn-alt">Посмотреть проекты</a>
+            <!-- КНОПКА 1: ТЕЛЕГРАМ КАНАЛ (Замените ссылку в href на ваш канал) -->
+            <a href="https://t.me/waxynews" target="_blank" class="btn btn-tg-channel">
+                <i class="fab fa-telegram"></i> Telegram Канал
+            </a>
+
+            <!-- КНОПКА 2: ЛИЧНЫЙ ТЕЛЕГРАМ -->
+            <a href="https://t.me/waxy00" target="_blank" class="btn btn-tg-private">
+                <i class="fab fa-telegram"></i> Личный Telegram
+            </a>
+
+            <!-- КНОПКА 3: ТИК ТОК (Замените ссылку в href на ваш профиль TikTok) -->
+            <a href="https://www.tiktok.com/@waxy033?_r=1&_t=ZS-98wO7HsuLMj" target="_blank" class="btn btn-tiktok">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+
+            <!-- КНОПКА 4: ДИСКОРД (Замените ссылку в href на вашу инвайт-ссылку) -->
+            <a href="https://discord.gg/Cw2KGJWAa" target="_blank" class="btn btn-discord">
+                <i class="fab fa-discord"></i> Discord
+            </a>
         </div>
     </div>
 
 </body>
 </html>
-
