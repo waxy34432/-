@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>waxy09</title>
-    <!-- Подключаем шрифтовые иконки Font Awesome для логотипов соцсетей -->
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         * {
             margin: 0;
@@ -79,7 +77,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
             padding: 16px;
             border-radius: 14px;
             color: #fff;
@@ -92,17 +90,21 @@
             cursor: pointer;
         }
 
-        .btn i {
-            font-size: 20px;
-            width: 24px;
-            text-align: center;
+        /* Стилизация SVG иконок */
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            transition: transform 0.3s ease, fill 0.3s ease;
         }
 
-        /* Кнопка 1: ТГ Канал (Светло-синий Telegram) */
+        /* Кнопка 1: ТГ Канал */
         .btn-tg-channel {
             background: rgba(34, 158, 217, 0.1);
             border-color: rgba(34, 158, 217, 0.3);
             color: #229ed9;
+        }
+        .btn-tg-channel svg {
+            fill: #229ed9;
         }
         .btn-tg-channel:hover {
             background: #229ed9;
@@ -110,12 +112,18 @@
             box-shadow: 0 0 20px rgba(34, 158, 217, 0.5);
             transform: translateY(-2px);
         }
+        .btn-tg-channel:hover svg {
+            fill: #fff;
+        }
 
-        /* Кнопка 2: Личный ТГ (Темно-синий Telegram) */
+        /* Кнопка 2: Личный ТГ */
         .btn-tg-private {
             background: rgba(0, 136, 204, 0.1);
             border-color: rgba(0, 136, 204, 0.3);
             color: #0088cc;
+        }
+        .btn-tg-private svg {
+            fill: #0088cc;
         }
         .btn-tg-private:hover {
             background: #0088cc;
@@ -123,12 +131,18 @@
             box-shadow: 0 0 20px rgba(0, 136, 204, 0.5);
             transform: translateY(-2px);
         }
+        .btn-tg-private:hover svg {
+            fill: #fff;
+        }
 
-        /* Кнопка 3: TikTok (Черный с неоновым эффектом) */
+        /* Кнопка 3: TikTok */
         .btn-tiktok {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.03);
             border-color: rgba(255, 255, 255, 0.15);
             color: #fff;
+        }
+        .btn-tiktok svg {
+            fill: #fff;
         }
         .btn-tiktok:hover {
             background: #010101;
@@ -137,17 +151,23 @@
             transform: translateY(-2px);
         }
 
-        /* Кнопка 4: Discord (Фирменный Blurple) */
+        /* Кнопка 4: Discord */
         .btn-discord {
             background: rgba(88, 101, 242, 0.1);
             border-color: rgba(88, 101, 242, 0.3);
             color: #5865f2;
+        }
+        .btn-discord svg {
+            fill: #5865f2;
         }
         .btn-discord:hover {
             background: #5865f2;
             color: #fff;
             box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
             transform: translateY(-2px);
+        }
+        .btn-discord:hover svg {
+            fill: #fff;
         }
     </style>
 </head>
@@ -159,24 +179,28 @@
         <div class="subtitle">Мои контакты</div>
         
         <div class="links-container">
-            <!-- КНОПКА 1: ТЕЛЕГРАМ КАНАЛ (Замените ссылку в href на ваш канал) -->
+            <!-- ТЕЛЕГРАМ КАНАЛ -->
             <a href="https://t.me/waxynews" target="_blank" class="btn btn-tg-channel">
-                <i class="fab fa-telegram"></i> Telegram Канал
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.46 2.75-2.67.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.83 1.16-5.16 3.41-.49.33-.93.5-1.33.49-.44-.01-1.29-.25-1.92-.45-.77-.25-1.39-.39-1.34-.83.03-.23.35-.46.97-.71 3.8-1.65 6.34-2.74 7.61-3.26 3.62-1.49 4.37-1.75 4.86-1.75.11 0 .35.03.5.16.13.1.17.25.18.36z"/></svg>
+                Telegram Канал
             </a>
 
-            <!-- КНОПКА 2: ЛИЧНЫЙ ТЕЛЕГРАМ -->
+            <!-- ЛИЧНЫЙ ТЕЛЕГРАМ -->
             <a href="https://t.me/waxy00" target="_blank" class="btn btn-tg-private">
-                <i class="fab fa-telegram"></i> Личный Telegram
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.46 2.75-2.67.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.83 1.16-5.16 3.41-.49.33-.93.5-1.33.49-.44-.01-1.29-.25-1.92-.45-.77-.25-1.39-.39-1.34-.83.03-.23.35-.46.97-.71 3.8-1.65 6.34-2.74 7.61-3.26 3.62-1.49 4.37-1.75 4.86-1.75.11 0 .35.03.5.16.13.1.17.25.18.36z"/></svg>
+                Личный Telegram
             </a>
 
-            <!-- КНОПКА 3: ТИК ТОК (Замените ссылку в href на ваш профиль TikTok) -->
-            <a href="https://www.tiktok.com/@waxy033?_r=1&_t=ZS-98wO7HsuLMj" target="_blank" class="btn btn-tiktok">
-                <i class="fab fa-tiktok"></i> TikTok
+            <!-- TIKTOK -->
+            <a href="https://www.tiktok.com/@waxy033?_r=1&_t=ZS-98wOh0sqR0e" target="_blank" class="btn btn-tiktok">
+                <svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.52-4.06-1.37-.28-.2-.53-.43-.77-.68v6.49c0 .73-.1 1.47-.32 2.17-.79 2.73-3.41 4.58-6.28 4.38-3.08-.1-5.75-2.43-6.13-5.5-.49-3.5 2.06-6.85 5.58-7.25.75-.1 1.52-.06 2.27.11v4.05c-.56-.19-1.17-.24-1.75-.12-1.5.25-2.62 1.66-2.5 3.17.09 1.4 1.25 2.53 2.66 2.57 1.58.08 2.97-1.12 3.04-2.7.02-1.11 0-2.22.01-3.33V.02z"/></svg>
+                TikTok
             </a>
 
-            <!-- КНОПКА 4: ДИСКОРД (Замените ссылку в href на вашу инвайт-ссылку) -->
+            <!-- DISCORD -->
             <a href="https://discord.gg/Cw2KGJWAa" target="_blank" class="btn btn-discord">
-                <i class="fab fa-discord"></i> Discord
+                <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.094 13.094 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.298 12.298 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/></svg>
+                Discord
             </a>
         </div>
     </div>
