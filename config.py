@@ -1,7 +1,7 @@
 # config.py
 # Заполни свои данные тут
 
-BOT_TOKEN = "ВСТАВЬ_СЮДА_ТОКЕН_ОТ_BOTFATHER"
+BOT_TOKEN = "8658784166:AAH43OXK3nxKacZe_W5QJr0QeTSspgljb4Q"
 
 # Telegram ID пользователей, у которых будет доступ к админ-панели.
 # Узнать свой ID можно у бота @userinfobot
